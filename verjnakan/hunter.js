@@ -1,7 +1,6 @@
-class Hunter {
+class Hunter extends LivinegCreature{
     constructor(x, y) {
-        this.x = x
-        this.y = y
+        super(x,y)
         this.energy = 20
         this.directions = []
 
