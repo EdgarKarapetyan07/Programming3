@@ -1,4 +1,5 @@
-class Rip extends LivinegCreature{
+let LivinegCreature=require("./LivingCreature")
+module.export = class Rip extends LivinegCreature{
     constructor(x, y) {
        super(x,y)
         this.energy = 10

@@ -1,4 +1,6 @@
-class LivinegCreature {
+
+
+module.export =class LivinegCreature {
     constructor(x,y){
         this.x = x
         this.y = y
