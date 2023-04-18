@@ -58,8 +58,7 @@ module.export = class Rip extends LivinegCreature{
     }
     mul() {
         let emptyCell = this.chooseCell(0)
-        let newCell = random(emptyCell)
-
+        let newCell = emptyCell[Math.floor(Math.random* emptyCell.length)]
         if (newCell) {
             let newX = newCell[0]
             let newY = newCell[1]
@@ -77,7 +76,7 @@ module.export = class Rip extends LivinegCreature{
     }
     eat() {
         let emptyCell = this.chooseCell(1,2,3,4)
-        let newCell = random(emptyCell)
+        let newCell = emptyCell[Math.floor(Math.random* emptyCell.length)]
 
         if (newCell) {
             this.energy += 7
@@ -125,7 +124,7 @@ module.export = class Rip extends LivinegCreature{
     }
     move() {
         let emptyCell = this.chooseCell(0)
-        let newCell = random(emptyCell)
+        let newCell = emptyCell[Math.floor(Math.random* emptyCell.length)]
 
         if (newCell) {
             let newX = newCell[0]
