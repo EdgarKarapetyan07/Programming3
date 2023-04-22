@@ -1,4 +1,6 @@
 
+
+var socket = io()
 let side = 30
 ///օբյեկտներ պահելու զանգվածներ
 
@@ -11,7 +13,7 @@ function setup() {
 
 
 
-function draw() {
+function changecolor(matrix) {
         for (let y = 0; y < matrix.length; y++) {
                 for (let x = 0; x < matrix[y].length; x++) {
                         if (matrix[y][x] == 1) {
@@ -38,28 +40,12 @@ function draw() {
 
 
 
-                for (let i in grassArr) {
-                        grassArr[i].mul()
-                }
-
-
-                for(let i in grassEaterArr){
-                        grassEaterArr[i].eat()
-                }
-
-             
-
-                for(let i in predatorArr){
-                        predatorArr[i].eat()
-                }
-                for(let i in hunterArr){
-                        hunterArr[i].eat()
-                }
-
-                for(let i in ripArr){
-                        ripArr[i].eat()
-                        ripArr[i].mul()
-                }
+                
 
                
         }
+
+
+socket.on("send matrix", changecolor )
+
+

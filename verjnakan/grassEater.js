@@ -1,5 +1,5 @@
 let LivinegCreature=require("./LivingCreature")
-module.export = class GrassEater extends LivinegCreature{
+module.exports = class GrassEater extends LivinegCreature{
     constructor(x,y){
         super(x,y)
         

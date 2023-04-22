@@ -10,7 +10,7 @@ res.redirect('index.html')
 
 
 })
-server.listen(3000,function(){
+server.listen(3001,function(){
 console.log("server is run");
 
 })
@@ -70,7 +70,7 @@ io.sockets.emit("send matrix", matrix )
  grassEaterArr = []
  predatorArr = []
  hunterArr=[]
- ripArr=[]
+ ripArr=[]              
 
 //modul
 Grass = require("./grass");
@@ -113,3 +113,38 @@ function createObject() {
 }
 
 }
+function Game() {
+        for (let i in grassArr) {
+                grassArr[i].mul()
+        }
+
+
+        for(let i in grassEaterArr){
+                grassEaterArr[i].eat()
+        }
+
+     
+
+        for(let i in predatorArr){
+                predatorArr[i].eat()
+        }
+        for(let i in hunterArr){
+                hunterArr[i].eat()
+        }
+
+        for(let i in ripArr){
+                ripArr[i].eat()
+                ripArr[i].mul()
+        }
+
+        io.sockets.emit("send matrix", matrix )
+
+}
+
+setInterval(Game, 300)
+
+io.on("conection",  function(){
+        createObject()
+
+} )
+
