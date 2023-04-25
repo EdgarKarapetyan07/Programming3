@@ -1,5 +1,5 @@
-let LivinegCreature=require("./LivingCreature")
-module.exports = class Hunter extends LivinegCreature{
+let LivingCreature=require("./LivingCreature")
+module.exports = class Hunter extends LivingCreature{
     constructor(x, y) {
         super(x,y)
         this.energy = 20

@@ -1,7 +1,7 @@
-let LivinegCreature=require("./LivingCreature")
+let LivingCreature=require("./LivingCreature")
 
 
-module.exports = class Grass extends LivinegCreature{
+module.exports = class Grass extends LivingCreature{
     constructor(x,y){
         super(x,y)
         this.multiply = 0
@@ -15,7 +15,6 @@ module.exports = class Grass extends LivinegCreature{
          this.multiply++
           let emptyCell = this.chooseCell(0)
           let newCell =  emptyCell[Math.floor(Math.random* emptyCell.length)]
-      
           if(newCell && this.multiply >= 5){
                      let newX  =   newCell[0]
                      let newY  =   newCell[1]
