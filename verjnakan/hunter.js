@@ -1,4 +1,4 @@
-let LivingCreature=require("./LivingCreature")
+let LivingCreature = require("./LivingCreature")
 module.exports = class Hunter extends LivingCreature{
     constructor(x, y) {
         super(x,y)
@@ -47,7 +47,7 @@ module.exports = class Hunter extends LivingCreature{
     }
     mul() {
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell[Math.floor(Math.random* emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
         if (newCell) {
             let newX = newCell[0]
@@ -64,7 +64,7 @@ module.exports = class Hunter extends LivingCreature{
     }
     eat() {
         let emptyCell = this.chooseCell(3, 1)
-        let newCell = emptyCell[Math.floor(Math.random* emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
         if (newCell) {
             this.energy += 7
@@ -99,7 +99,7 @@ module.exports = class Hunter extends LivingCreature{
     }
     move() {
         let emptyCell = this.chooseCell(0)
-        let newCell = emptyCell[Math.floor(Math.random* emptyCell.length)]
+        let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
         if (newCell) {
             let newX = newCell[0]

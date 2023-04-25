@@ -146,7 +146,7 @@ function game() {
 
 }
 
-setInterval(game, 300)
+setInterval(game, 100)
 
 io.on("connection", function () {
         createObject()
