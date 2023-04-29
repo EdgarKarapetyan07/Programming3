@@ -4,13 +4,13 @@ var server = require('http').Server(app)
 var io = require('socket.io')(server)
 var fs = require("fs");
 
-const { kill } = require('process');
-const Fire = require('./fire');
-const Grass = require('./grass');
-const GrassEater = require('./grassEater');
-const Hunter = require('./hunter');
-const Predator = require('./predator');
-const Rip = require('./rip');
+// const { kill } = require('process');
+// const Fire = require('./fire');
+// const Grass = require('./grass');
+// const GrassEater = require('./grassEater');
+// const Hunter = require('./hunter');
+// const Predator = require('./predator');
+// const Rip = require('./rip');
 
 app.use(express.static("."))
 
@@ -87,15 +87,14 @@ hunterArr = []
 ripArr = []
 
 //modules
-grass = require("./grass");
-grassEater = require("./grassEater");
-hunter = require("./hunter");
-predator = require("./predator");
-rip = require("./rip");
-
+Grass = require("./grass");
+GrassEater = require("./grassEater");
+Hunter = require("./hunter");
+Predator = require("./predator");
+Rip = require("./rip");
+Fire = require("./fire")
 // object
 function createObject() {
-        console.log(matrix);
         for (let y = 0; y < matrix.length; y++) {
                 for (let x = 0; x < matrix[y].length; x++) {
                         if (matrix[y][x] == 1) {
@@ -129,8 +128,8 @@ function createObject() {
                         }
 
                 }
-                io.sockets.emit('send matrix', matrix)
         }
+        io.sockets.emit('send matrix', matrix)
 }
 
 function game() {
@@ -166,7 +165,7 @@ function game() {
 
 }
 
-setInterval(game, 100)
+setInterval(game, 400)
 
 
 var weath;
